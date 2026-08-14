@@ -1,0 +1,453 @@
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@plugin './hero.js';
+@plugin './typography.js';
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+@config "../../tailwind.config.js";
+@theme {
+  --color-primary: #275fe0;
+  --color-primary-100: #e6eeff;
+  --color-primary-200: #bfd4ff;
+  --color-primary-300: #99bbff;
+  --color-primary-400: #4d8aff;
+  --color-primary-500: #275fe0;
+  --color-primary-600: #1f4cb3;
+  --color-primary-700: #173a86;
+  --color-primary-800: #0f2759;
+  --color-primary-900: #08152d;
+  --color-danger: #ef4056;
+  --font-iranyekan: "iranyekan", sans-serif;
+  --font-pelak: "pelak", sans-serif;
+  --font-dana: "dana", sans-serif;
+  --font-noora: "noora", sans-serif;
+  --breakpoint-xs: 360px;
+}
+.btn {
+  transition: 200ms;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.btn:not(.no-highlight):before {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 100%;
+}
+.btn:active {
+  transform: translate(0, 2px);
+}
+.btn:hover:before {
+  transition: 800ms;
+  left: -100%;
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.logo-float {
+  object-fit: contain;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (min-width: 1281px) {
+  .breakpoint .styles_MainHomeTopSliderItem__widget__lAr4S {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .styles_MainHomeTopSliderItem__widget__lAr4S {
+    min-height: 300px;
+  }
+}
+.styles_MainHomeTopSliderItem__widget__lAr4S {
+  min-height: 180px;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+li::marker {
+  color: rgb(148, 148, 148);
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+.input {
+  @apply outline-none !text-zinc-500 border border-zinc-300 p-3 rounded-sm w-full bg-transparent shadow-none;
+}
+.btn-primary {
+  @apply p-3 bg-primary  text-white   transition-colors ease-in-out;
+}
+html {
+  font-size: 13px;
+}
+.switch-container {
+  width: 42px;
+  height: 23px;
+  position: relative;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #e9e9eb;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.slider {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: calc(50% - 18px / 2 - 10px);
+  top: calc(50% - 18px / 2);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0px 3px 8px rgba(0, 0, 0, 0.15),
+    0px 3px 1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.checkbox:checked + .switch {
+  background-color: var(--color-primary);
+}
+
+.checkbox:checked + .switch .slider {
+  left: calc(50% - 18px / 2 + 10px);
+  top: calc(50% - 18px / 2);
+}
+
+.spoiler-link:after {
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: 1em;
+  content: "";
+  position: absolute;
+  border-bottom: 1px dashed #8b91a2;
+  margin-top: 0.8em;
+}
+
+@layer base {
+  img {
+    display: inline;
+  }
+}
+.invoice-card {
+  max-width: 960px;
+  background-color: #fff;
+  margin: 40px auto;
+  border-radius: 12px;
+  border: 1px solid #fcd34d;
+  box-shadow: 0 0 0 3px #fff9db;
+  padding: 24px;
+  color: #333;
+}
+
+/* عنوان */
+.invoice-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.invoice-head h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #78350f;
+}
+
+.invoice-meta span {
+  background-color: #fef9c3;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* دو ستون فروشنده/مشتری */
+.invoice-section {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.bill-column {
+  flex: 1;
+  min-width: 220px;
+}
+
+.bill-column h4 {
+  margin-bottom: 8px;
+  color: #ca8a04;
+}
+
+.bill-column p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* تاریخ‌ها */
+.invoice-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.invoice-dates label {
+  font-weight: bold;
+  color: #78350f;
+  display: block;
+  font-size: 14px;
+}
+
+.invoice-dates p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* جدول */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #fcd34d;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.invoice-table th {
+  background-color: #fef9c3;
+  color: #78350f;
+}
+
+.invoice-table tr:nth-child(even) {
+  background-color: #fffdf0;
+}
+
+/* جمع کل */
+.invoice-total {
+  margin-top: 20px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  color: #92400e;
+}
+.recaptcha-container iframe {
+  transform: scale(0.7);
+  transform-origin: 0 0;
+}
+.article-content h1 {
+  @apply text-black text-4xl font-extrabold my-4;
+}
+.article-content h2 {
+  @apply text-black text-3xl font-bold my-3;
+}
+.article-content h3 {
+  @apply text-black text-2xl font-semibold my-2;
+}
+.article-content h4 {
+  @apply text-black text-xl font-semibold my-2;
+}
+.article-content h5 {
+  @apply text-black text-lg font-medium my-1;
+}
+.article-content h6 {
+  @apply text-black text-base font-medium my-1;
+}
+
+.article-content p {
+  @apply text-black text-base leading-7 my-2;
+}
+.article-content ul {
+  @apply list-disc ml-6 my-2;
+}
+.article-content ol {
+  @apply list-decimal ml-6 my-2;
+}
+.article-content li {
+  @apply my-1;
+}
+.article-content blockquote {
+  @apply border-l-4 border-slate-300 dark:border-slate-600 pl-4 italic my-4;
+}
+.article-content a {
+  @apply text-blue-600 dark:text-blue-400 underline;
+}
+.article-content pre {
+  @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto my-4;
+}
+.article-content code {
+  @apply bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded;
+}
+.article-content table {
+  @apply w-full border-collapse my-4;
+}
+.article-content th,
+.article-content td {
+  @apply border border-slate-300 dark:border-slate-600 p-2;
+}
+.article-content img {
+  @apply my-4 rounded-xl;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-6px);
+  }
+  30% {
+    transform: translateX(6px);
+  }
+  45% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  90% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* انیمیشن ریپل برای هاور */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.group:hover .ripple-effect {
+  animation: ripple 0.8s ease-out;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
