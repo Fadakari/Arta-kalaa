@@ -291,11 +291,7 @@ const CreateOrder = () => {
             <div className="flex justify-between">
               <p>هزینه ارسال</p>
               <p className="font-semibold">
-                {cart.total_delivery === 0 ? (
-                  <span className="text-red-500">رایگان</span>
-                ) : (
-                  `${cart.total_delivery.toLocaleString("fa-IR")} تومان`
-                )}
+                {cart.total_delivery.toLocaleString("fa-IR")} تومان
               </p>
             </div>
             <hr className="my-3" />
