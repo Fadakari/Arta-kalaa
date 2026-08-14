@@ -151,7 +151,7 @@ export default async function Page({
       : data.cover_image
         ? [data.cover_image]
         : [];
-        
+
   return (
     <>
       <Script
@@ -235,37 +235,9 @@ export default async function Page({
                 </div>
 
                 {data.is_available && data.stock > 0 && (
-                  <>
-                    <a href="#" className="text-cyan-400 spoiler-link relative">
-                      آیا قیمت مناسب‌تری سراغ دارید؟
-                    </a>
-                    <div className="bg-white border border-zinc-200 rounded-lg p-3 flex justify-between w-full mt-5 items-center shadow-sm">
-                      <div className="flex flex-col">
-                        {data.delivery_price === 0 ? (
-                          <p className="text-zinc-500 font-bold text-base">
-                            ارسال رایگان
-                          </p>
-                        ) : (
-                          <p className="text-zinc-800 font-bold text-base flex items-center gap-1">
-                            🚚 ارسال با{" "}
-                            <span className="text-cyan-600">
-                              {data.delivery_price.toLocaleString("fa-IR")}{" "}
-                              تومان
-                            </span>
-                          </p>
-                        )}
-                      </div>
-                      <div className="size-12 relative">
-                        <Image
-                          width={48}
-                          height={48}
-                          src="/free-delivery-free.svg"
-                          alt="delivery"
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
-                  </>
+                  <a href="#" className="text-cyan-400 spoiler-link relative">
+                    آیا قیمت مناسب‌تری سراغ دارید؟
+                  </a>
                 )}
               </div>
             </div>
@@ -276,28 +248,6 @@ export default async function Page({
               is_available={data.is_available && data.stock > 0}
               product={data}
             />
-          </div>
-          <div className="my-10 w-full h-full space-y-3 block lg:hidden px-4">
-            <a href="#" className="text-cyan-400 spoiler-link relative">
-              آیا قیمت مناسب‌تری سراغ دارید؟
-            </a>
-            <div className="bg-white border border-zinc-200 rounded-lg p-2 flex justify-between w-full mt-5 px-3 items-center">
-              <div>
-                <p className="text-zinc-800">ارسال رایگان سفارش</p>
-                <p className="font-light text-zinc-500 font-dana pt-1">
-                  سفارش‌های بالای 5 میلیون تومان
-                </p>
-              </div>
-              <div className="size-14 relative">
-                <Image
-                  width={56}
-                  height={56}
-                  src="/free-delivery-free.svg"
-                  loading="lazy"
-                  alt="ارسال رایگان"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="fixed bottom-0 z-30 right-0 w-full space-y-3 bg-white shadow-2xl sm:hidden p-2 flex items-center gap-3 border-t border-zinc-200">
