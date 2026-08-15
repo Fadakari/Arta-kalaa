@@ -181,11 +181,6 @@ function Footer() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-400 drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] tracking-wide">
                   پترن
                 </h2>
-                
-                {/* فرانت توسط امیرحسین خدادادیان - حالت محو شدگی */}
-                <span className="text-[10px] text-blue-400/20 mt-0.5 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                  فرانت اند توسط امیرحسین خدادادیان
-                </span>
               </div>
             </div>
             <div className="flex gap-5">
